@@ -1,10 +1,12 @@
 export interface DistlintOptions {
-  lastNameUpperCase?: boolean;
+  include?: string | string[];
+  exclude?: string | string[];
 }
 
-export function distlint(firstName: string, lastName: string, options?: DistlintOptions) {
-  if (options?.lastNameUpperCase) {
-    return firstName + ' ' + lastName.toLocaleUpperCase();
+export async function distlint(options?: DistlintOptions | DistlintOptions[]) {
+  if (Array.isArray(options)) {
+    for (const singleOptions of options) {
+      await distlint(singleOptions);
+    }
   }
-  return firstName + ' ' + lastName;
 }
