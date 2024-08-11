@@ -1,4 +1,7 @@
 {
+  "name": "distlint",
+  "version": "0.0.1",
+  "description": "Check problems in compiled code before publishing npm packages",
   "homepage": "https://github.com/guoyunhe/distlint#readme",
   "bugs": {
     "url": "https://github.com/guoyunhe/distlint/issues"
